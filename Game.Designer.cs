@@ -32,13 +32,9 @@ namespace odkladiste
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
-            this.GameOverMessage = new System.Windows.Forms.Label();
-            this.FinalScore = new System.Windows.Forms.Label();
-            this.BackToMenu = new System.Windows.Forms.Button();
             this.textLives = new System.Windows.Forms.Label();
             this.textScore = new System.Windows.Forms.Label();
             this.resetTimer = new System.Windows.Forms.Timer(this.components);
-            this.newGame = new System.Windows.Forms.Button();
             this.arrow = new System.Windows.Forms.PictureBox();
             this.gameGate = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
@@ -77,6 +73,30 @@ namespace odkladiste
             this.Guardian = new System.Windows.Forms.PictureBox();
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.pictureBox33 = new System.Windows.Forms.PictureBox();
+            this.pictureBox34 = new System.Windows.Forms.PictureBox();
+            this.pictureBox35 = new System.Windows.Forms.PictureBox();
+            this.pictureBox36 = new System.Windows.Forms.PictureBox();
+            this.pictureBox37 = new System.Windows.Forms.PictureBox();
+            this.pictureBox38 = new System.Windows.Forms.PictureBox();
+            this.pictureBox39 = new System.Windows.Forms.PictureBox();
+            this.pictureBox40 = new System.Windows.Forms.PictureBox();
+            this.pictureBox41 = new System.Windows.Forms.PictureBox();
+            this.pictureBox42 = new System.Windows.Forms.PictureBox();
+            this.pictureBox43 = new System.Windows.Forms.PictureBox();
+            this.pictureBox44 = new System.Windows.Forms.PictureBox();
+            this.pictureBox45 = new System.Windows.Forms.PictureBox();
+            this.pictureBox46 = new System.Windows.Forms.PictureBox();
+            this.pictureBox47 = new System.Windows.Forms.PictureBox();
+            this.pictureBox48 = new System.Windows.Forms.PictureBox();
+            this.pictureBox49 = new System.Windows.Forms.PictureBox();
+            this.pictureBox50 = new System.Windows.Forms.PictureBox();
+            this.pictureBox51 = new System.Windows.Forms.PictureBox();
+            this.Guardian2 = new System.Windows.Forms.PictureBox();
+            this.Guardian3 = new System.Windows.Forms.PictureBox();
+            this.GameOverMessage = new System.Windows.Forms.Label();
+            this.FinalScore = new System.Windows.Forms.Label();
+            this.BackToMenu = new System.Windows.Forms.Button();
+            this.newGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.arrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameGate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -115,53 +135,32 @@ namespace odkladiste
             ((System.ComponentModel.ISupportInitialize)(this.Guardian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Guardian2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Guardian3)).BeginInit();
             this.SuspendLayout();
             // 
             // GameTimer
             // 
             this.GameTimer.Interval = 10;
             this.GameTimer.Tick += new System.EventHandler(this.mainGameTimer);
-            // 
-            // GameOverMessage
-            // 
-            this.GameOverMessage.AutoSize = true;
-            this.GameOverMessage.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.GameOverMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GameOverMessage.ForeColor = System.Drawing.Color.Yellow;
-            this.GameOverMessage.Location = new System.Drawing.Point(276, 187);
-            this.GameOverMessage.Name = "GameOverMessage";
-            this.GameOverMessage.Size = new System.Drawing.Size(248, 48);
-            this.GameOverMessage.TabIndex = 28;
-            this.GameOverMessage.Tag = "gameOver";
-            this.GameOverMessage.Text = "Game Over!";
-            this.GameOverMessage.Visible = false;
-            // 
-            // FinalScore
-            // 
-            this.FinalScore.AutoSize = true;
-            this.FinalScore.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FinalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FinalScore.ForeColor = System.Drawing.Color.Yellow;
-            this.FinalScore.Location = new System.Drawing.Point(316, 251);
-            this.FinalScore.Name = "FinalScore";
-            this.FinalScore.Size = new System.Drawing.Size(169, 36);
-            this.FinalScore.TabIndex = 29;
-            this.FinalScore.Tag = "gameOver";
-            this.FinalScore.Text = "Score 0000";
-            this.FinalScore.Visible = false;
-            // 
-            // BackToMenu
-            // 
-            this.BackToMenu.BackColor = System.Drawing.Color.Yellow;
-            this.BackToMenu.Location = new System.Drawing.Point(700, 380);
-            this.BackToMenu.Name = "BackToMenu";
-            this.BackToMenu.Size = new System.Drawing.Size(80, 50);
-            this.BackToMenu.TabIndex = 30;
-            this.BackToMenu.Tag = "gameOver";
-            this.BackToMenu.Text = "Menu";
-            this.BackToMenu.UseVisualStyleBackColor = false;
-            this.BackToMenu.Visible = false;
-            this.BackToMenu.Click += new System.EventHandler(this.BackToMenu_Click);
             // 
             // textLives
             // 
@@ -188,19 +187,6 @@ namespace odkladiste
             // resetTimer
             // 
             this.resetTimer.Interval = 10;
-            // 
-            // newGame
-            // 
-            this.newGame.BackColor = System.Drawing.Color.Yellow;
-            this.newGame.Location = new System.Drawing.Point(320, 320);
-            this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(160, 100);
-            this.newGame.TabIndex = 42;
-            this.newGame.Tag = "gameOver";
-            this.newGame.Text = "New game";
-            this.newGame.UseVisualStyleBackColor = false;
-            this.newGame.Visible = false;
-            this.newGame.Click += new System.EventHandler(this.button1_Click);
             // 
             // arrow
             // 
@@ -252,7 +238,7 @@ namespace odkladiste
             // 
             this.pictureBox23.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pictureBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox23.Location = new System.Drawing.Point(792, 267);
+            this.pictureBox23.Location = new System.Drawing.Point(792, 268);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Padding = new System.Windows.Forms.Padding(3);
             this.pictureBox23.Size = new System.Drawing.Size(5, 180);
@@ -267,7 +253,7 @@ namespace odkladiste
             this.pictureBox22.Location = new System.Drawing.Point(792, 43);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Padding = new System.Windows.Forms.Padding(3);
-            this.pictureBox22.Size = new System.Drawing.Size(5, 180);
+            this.pictureBox22.Size = new System.Drawing.Size(5, 179);
             this.pictureBox22.TabIndex = 36;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Tag = "wall";
@@ -315,7 +301,7 @@ namespace odkladiste
             this.bell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bell.Location = new System.Drawing.Point(645, 142);
             this.bell.Name = "bell";
-            this.bell.Size = new System.Drawing.Size(15, 15);
+            this.bell.Size = new System.Drawing.Size(20, 20);
             this.bell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bell.TabIndex = 27;
             this.bell.TabStop = false;
@@ -337,7 +323,7 @@ namespace odkladiste
             this.pictureBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pictureBox17.Location = new System.Drawing.Point(500, 97);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox17.Size = new System.Drawing.Size(10, 10);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 23;
             this.pictureBox17.TabStop = false;
@@ -606,7 +592,7 @@ namespace odkladiste
             // 
             this.Guardian.BackColor = System.Drawing.Color.Red;
             this.Guardian.InitialImage = null;
-            this.Guardian.Location = new System.Drawing.Point(570, 235);
+            this.Guardian.Location = new System.Drawing.Point(215, 292);
             this.Guardian.Margin = new System.Windows.Forms.Padding(0);
             this.Guardian.Name = "Guardian";
             this.Guardian.Size = new System.Drawing.Size(25, 25);
@@ -619,10 +605,10 @@ namespace odkladiste
             // 
             this.pictureBox32.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pictureBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox32.Location = new System.Drawing.Point(700, 130);
+            this.pictureBox32.Location = new System.Drawing.Point(540, 168);
             this.pictureBox32.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(5, 200);
+            this.pictureBox32.Size = new System.Drawing.Size(167, 5);
             this.pictureBox32.TabIndex = 1011;
             this.pictureBox32.TabStop = false;
             this.pictureBox32.Tag = "wall";
@@ -634,17 +620,335 @@ namespace odkladiste
             this.pictureBox33.Location = new System.Drawing.Point(747, 168);
             this.pictureBox33.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(5, 200);
+            this.pictureBox33.Size = new System.Drawing.Size(5, 55);
             this.pictureBox33.TabIndex = 1012;
             this.pictureBox33.TabStop = false;
             this.pictureBox33.Tag = "wall";
             // 
-            // Form1
+            // pictureBox34
+            // 
+            this.pictureBox34.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox34.Location = new System.Drawing.Point(747, 267);
+            this.pictureBox34.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox34.Name = "pictureBox34";
+            this.pictureBox34.Size = new System.Drawing.Size(5, 135);
+            this.pictureBox34.TabIndex = 1013;
+            this.pictureBox34.TabStop = false;
+            this.pictureBox34.Tag = "wall";
+            // 
+            // pictureBox35
+            // 
+            this.pictureBox35.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox35.Location = new System.Drawing.Point(575, 218);
+            this.pictureBox35.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox35.Name = "pictureBox35";
+            this.pictureBox35.Size = new System.Drawing.Size(167, 5);
+            this.pictureBox35.TabIndex = 1014;
+            this.pictureBox35.TabStop = false;
+            this.pictureBox35.Tag = "wall";
+            // 
+            // pictureBox36
+            // 
+            this.pictureBox36.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox36.Location = new System.Drawing.Point(392, 267);
+            this.pictureBox36.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox36.Name = "pictureBox36";
+            this.pictureBox36.Size = new System.Drawing.Size(350, 5);
+            this.pictureBox36.TabIndex = 1015;
+            this.pictureBox36.TabStop = false;
+            this.pictureBox36.Tag = "wall";
+            // 
+            // pictureBox37
+            // 
+            this.pictureBox37.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox37.Location = new System.Drawing.Point(702, 320);
+            this.pictureBox37.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox37.Name = "pictureBox37";
+            this.pictureBox37.Size = new System.Drawing.Size(5, 120);
+            this.pictureBox37.TabIndex = 1016;
+            this.pictureBox37.TabStop = false;
+            this.pictureBox37.Tag = "wall";
+            // 
+            // pictureBox38
+            // 
+            this.pictureBox38.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox38.Location = new System.Drawing.Point(657, 273);
+            this.pictureBox38.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox38.Name = "pictureBox38";
+            this.pictureBox38.Size = new System.Drawing.Size(5, 129);
+            this.pictureBox38.TabIndex = 1017;
+            this.pictureBox38.TabStop = false;
+            this.pictureBox38.Tag = "wall";
+            // 
+            // pictureBox39
+            // 
+            this.pictureBox39.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox39.Location = new System.Drawing.Point(467, 312);
+            this.pictureBox39.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox39.Name = "pictureBox39";
+            this.pictureBox39.Size = new System.Drawing.Size(150, 5);
+            this.pictureBox39.TabIndex = 1018;
+            this.pictureBox39.TabStop = false;
+            this.pictureBox39.Tag = "wall";
+            // 
+            // pictureBox40
+            // 
+            this.pictureBox40.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox40.Location = new System.Drawing.Point(422, 357);
+            this.pictureBox40.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox40.Name = "pictureBox40";
+            this.pictureBox40.Size = new System.Drawing.Size(135, 5);
+            this.pictureBox40.TabIndex = 1019;
+            this.pictureBox40.TabStop = false;
+            this.pictureBox40.Tag = "wall";
+            // 
+            // pictureBox41
+            // 
+            this.pictureBox41.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox41.Location = new System.Drawing.Point(467, 402);
+            this.pictureBox41.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox41.Name = "pictureBox41";
+            this.pictureBox41.Size = new System.Drawing.Size(150, 5);
+            this.pictureBox41.TabIndex = 1020;
+            this.pictureBox41.TabStop = false;
+            this.pictureBox41.Tag = "wall";
+            // 
+            // pictureBox42
+            // 
+            this.pictureBox42.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox42.Location = new System.Drawing.Point(597, 357);
+            this.pictureBox42.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox42.Name = "pictureBox42";
+            this.pictureBox42.Size = new System.Drawing.Size(20, 5);
+            this.pictureBox42.TabIndex = 1021;
+            this.pictureBox42.TabStop = false;
+            this.pictureBox42.Tag = "wall";
+            // 
+            // pictureBox43
+            // 
+            this.pictureBox43.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox43.Location = new System.Drawing.Point(88, 131);
+            this.pictureBox43.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox43.Name = "pictureBox43";
+            this.pictureBox43.Size = new System.Drawing.Size(5, 129);
+            this.pictureBox43.TabIndex = 1022;
+            this.pictureBox43.TabStop = false;
+            this.pictureBox43.Tag = "wall";
+            // 
+            // pictureBox44
+            // 
+            this.pictureBox44.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox44.Location = new System.Drawing.Point(184, 190);
+            this.pictureBox44.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox44.Name = "pictureBox44";
+            this.pictureBox44.Size = new System.Drawing.Size(5, 250);
+            this.pictureBox44.TabIndex = 1023;
+            this.pictureBox44.TabStop = false;
+            this.pictureBox44.Tag = "wall";
+            // 
+            // pictureBox45
+            // 
+            this.pictureBox45.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox45.Location = new System.Drawing.Point(332, 240);
+            this.pictureBox45.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox45.Name = "pictureBox45";
+            this.pictureBox45.Size = new System.Drawing.Size(5, 200);
+            this.pictureBox45.TabIndex = 1024;
+            this.pictureBox45.TabStop = false;
+            this.pictureBox45.Tag = "wall";
+            // 
+            // pictureBox46
+            // 
+            this.pictureBox46.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox46.Location = new System.Drawing.Point(422, 273);
+            this.pictureBox46.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox46.Name = "pictureBox46";
+            this.pictureBox46.Size = new System.Drawing.Size(5, 85);
+            this.pictureBox46.TabIndex = 1025;
+            this.pictureBox46.TabStop = false;
+            this.pictureBox46.Tag = "wall";
+            // 
+            // pictureBox47
+            // 
+            this.pictureBox47.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox47.Location = new System.Drawing.Point(560, 357);
+            this.pictureBox47.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox47.Name = "pictureBox47";
+            this.pictureBox47.Size = new System.Drawing.Size(35, 5);
+            this.pictureBox47.TabIndex = 1026;
+            this.pictureBox47.TabStop = false;
+            this.pictureBox47.Tag = "activeWall";
+            // 
+            // pictureBox48
+            // 
+            this.pictureBox48.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox48.Location = new System.Drawing.Point(605, 131);
+            this.pictureBox48.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox48.Name = "pictureBox48";
+            this.pictureBox48.Size = new System.Drawing.Size(5, 35);
+            this.pictureBox48.TabIndex = 1027;
+            this.pictureBox48.TabStop = false;
+            this.pictureBox48.Tag = "activeWall";
+            // 
+            // pictureBox49
+            // 
+            this.pictureBox49.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox49.Location = new System.Drawing.Point(43, 200);
+            this.pictureBox49.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox49.Name = "pictureBox49";
+            this.pictureBox49.Size = new System.Drawing.Size(5, 35);
+            this.pictureBox49.TabIndex = 1028;
+            this.pictureBox49.TabStop = false;
+            this.pictureBox49.Tag = "activeWall";
+            // 
+            // pictureBox50
+            // 
+            this.pictureBox50.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox50.Location = new System.Drawing.Point(43, 240);
+            this.pictureBox50.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox50.Name = "pictureBox50";
+            this.pictureBox50.Size = new System.Drawing.Size(5, 129);
+            this.pictureBox50.TabIndex = 1029;
+            this.pictureBox50.TabStop = false;
+            this.pictureBox50.Tag = "wall";
+            // 
+            // pictureBox51
+            // 
+            this.pictureBox51.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox51.Location = new System.Drawing.Point(284, 131);
+            this.pictureBox51.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox51.Name = "pictureBox51";
+            this.pictureBox51.Size = new System.Drawing.Size(5, 250);
+            this.pictureBox51.TabIndex = 1030;
+            this.pictureBox51.TabStop = false;
+            this.pictureBox51.Tag = "wall";
+            // 
+            // Guardian2
+            // 
+            this.Guardian2.BackColor = System.Drawing.Color.Red;
+            this.Guardian2.InitialImage = null;
+            this.Guardian2.Location = new System.Drawing.Point(670, 395);
+            this.Guardian2.Margin = new System.Windows.Forms.Padding(0);
+            this.Guardian2.Name = "Guardian2";
+            this.Guardian2.Size = new System.Drawing.Size(25, 25);
+            this.Guardian2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Guardian2.TabIndex = 1031;
+            this.Guardian2.TabStop = false;
+            this.Guardian2.Tag = "guardian";
+            // 
+            // Guardian3
+            // 
+            this.Guardian3.BackColor = System.Drawing.Color.Red;
+            this.Guardian3.InitialImage = null;
+            this.Guardian3.Location = new System.Drawing.Point(670, 292);
+            this.Guardian3.Margin = new System.Windows.Forms.Padding(0);
+            this.Guardian3.Name = "Guardian3";
+            this.Guardian3.Size = new System.Drawing.Size(25, 25);
+            this.Guardian3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Guardian3.TabIndex = 1032;
+            this.Guardian3.TabStop = false;
+            this.Guardian3.Tag = "guardian";
+            // 
+            // GameOverMessage
+            // 
+            this.GameOverMessage.AutoSize = true;
+            this.GameOverMessage.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.GameOverMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GameOverMessage.ForeColor = System.Drawing.Color.Yellow;
+            this.GameOverMessage.Location = new System.Drawing.Point(276, 187);
+            this.GameOverMessage.Name = "GameOverMessage";
+            this.GameOverMessage.Size = new System.Drawing.Size(248, 48);
+            this.GameOverMessage.TabIndex = 1033;
+            this.GameOverMessage.Tag = "gameOver";
+            this.GameOverMessage.Text = "Game Over!";
+            this.GameOverMessage.Visible = false;
+            // 
+            // FinalScore
+            // 
+            this.FinalScore.AutoSize = true;
+            this.FinalScore.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FinalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FinalScore.ForeColor = System.Drawing.Color.Yellow;
+            this.FinalScore.Location = new System.Drawing.Point(316, 251);
+            this.FinalScore.Name = "FinalScore";
+            this.FinalScore.Size = new System.Drawing.Size(169, 36);
+            this.FinalScore.TabIndex = 1034;
+            this.FinalScore.Tag = "gameOver";
+            this.FinalScore.Text = "Score 0000";
+            this.FinalScore.Visible = false;
+            // 
+            // BackToMenu
+            // 
+            this.BackToMenu.BackColor = System.Drawing.Color.Yellow;
+            this.BackToMenu.Location = new System.Drawing.Point(700, 380);
+            this.BackToMenu.Name = "BackToMenu";
+            this.BackToMenu.Size = new System.Drawing.Size(80, 50);
+            this.BackToMenu.TabIndex = 1035;
+            this.BackToMenu.Tag = "gameOver";
+            this.BackToMenu.Text = "Menu";
+            this.BackToMenu.UseVisualStyleBackColor = false;
+            this.BackToMenu.Visible = false;
+            // 
+            // newGame
+            // 
+            this.newGame.BackColor = System.Drawing.Color.Yellow;
+            this.newGame.Location = new System.Drawing.Point(320, 320);
+            this.newGame.Name = "newGame";
+            this.newGame.Size = new System.Drawing.Size(160, 100);
+            this.newGame.TabIndex = 1036;
+            this.newGame.Tag = "gameOver";
+            this.newGame.Text = "New game";
+            this.newGame.UseVisualStyleBackColor = false;
+            this.newGame.Visible = false;
+            // 
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.newGame);
+            this.Controls.Add(this.BackToMenu);
+            this.Controls.Add(this.FinalScore);
+            this.Controls.Add(this.GameOverMessage);
+            this.Controls.Add(this.Guardian3);
+            this.Controls.Add(this.Guardian2);
+            this.Controls.Add(this.pictureBox51);
+            this.Controls.Add(this.pictureBox50);
+            this.Controls.Add(this.pictureBox49);
+            this.Controls.Add(this.pictureBox48);
+            this.Controls.Add(this.pictureBox47);
+            this.Controls.Add(this.pictureBox46);
+            this.Controls.Add(this.pictureBox45);
+            this.Controls.Add(this.pictureBox44);
+            this.Controls.Add(this.pictureBox43);
+            this.Controls.Add(this.pictureBox42);
+            this.Controls.Add(this.pictureBox41);
+            this.Controls.Add(this.pictureBox40);
+            this.Controls.Add(this.pictureBox39);
+            this.Controls.Add(this.pictureBox38);
+            this.Controls.Add(this.pictureBox37);
+            this.Controls.Add(this.pictureBox36);
+            this.Controls.Add(this.pictureBox35);
+            this.Controls.Add(this.pictureBox34);
             this.Controls.Add(this.pictureBox33);
             this.Controls.Add(this.pictureBox32);
             this.Controls.Add(this.Guardian);
@@ -659,7 +963,6 @@ namespace odkladiste
             this.Controls.Add(this.Horace);
             this.Controls.Add(this.arrow);
             this.Controls.Add(this.gameGate);
-            this.Controls.Add(this.newGame);
             this.Controls.Add(this.textScore);
             this.Controls.Add(this.textLives);
             this.Controls.Add(this.pictureBox21);
@@ -669,9 +972,6 @@ namespace odkladiste
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BackToMenu);
-            this.Controls.Add(this.FinalScore);
-            this.Controls.Add(this.GameOverMessage);
             this.Controls.Add(this.bell);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox17);
@@ -690,7 +990,7 @@ namespace odkladiste
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Game";
             this.Text = "Hungry Horace";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
@@ -732,6 +1032,26 @@ namespace odkladiste
             ((System.ComponentModel.ISupportInitialize)(this.Guardian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Guardian2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Guardian3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -756,9 +1076,6 @@ namespace odkladiste
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox bell;
-        private System.Windows.Forms.Label GameOverMessage;
-        private System.Windows.Forms.Label FinalScore;
-        private System.Windows.Forms.Button BackToMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox20;
@@ -769,7 +1086,6 @@ namespace odkladiste
         private System.Windows.Forms.Label textLives;
         private System.Windows.Forms.Label textScore;
         private System.Windows.Forms.Timer resetTimer;
-        private System.Windows.Forms.Button newGame;
         private System.Windows.Forms.PictureBox gameGate;
         private System.Windows.Forms.PictureBox arrow;
         private System.Windows.Forms.PictureBox Horace;
@@ -784,5 +1100,29 @@ namespace odkladiste
         private System.Windows.Forms.PictureBox Guardian;
         private System.Windows.Forms.PictureBox pictureBox32;
         private System.Windows.Forms.PictureBox pictureBox33;
+        private System.Windows.Forms.PictureBox pictureBox34;
+        private System.Windows.Forms.PictureBox pictureBox35;
+        private System.Windows.Forms.PictureBox pictureBox36;
+        private System.Windows.Forms.PictureBox pictureBox37;
+        private System.Windows.Forms.PictureBox pictureBox38;
+        private System.Windows.Forms.PictureBox pictureBox39;
+        private System.Windows.Forms.PictureBox pictureBox40;
+        private System.Windows.Forms.PictureBox pictureBox41;
+        private System.Windows.Forms.PictureBox pictureBox42;
+        private System.Windows.Forms.PictureBox pictureBox43;
+        private System.Windows.Forms.PictureBox pictureBox44;
+        private System.Windows.Forms.PictureBox pictureBox45;
+        private System.Windows.Forms.PictureBox pictureBox46;
+        private System.Windows.Forms.PictureBox pictureBox47;
+        private System.Windows.Forms.PictureBox pictureBox48;
+        private System.Windows.Forms.PictureBox pictureBox49;
+        private System.Windows.Forms.PictureBox pictureBox50;
+        private System.Windows.Forms.PictureBox pictureBox51;
+        private System.Windows.Forms.PictureBox Guardian2;
+        private System.Windows.Forms.PictureBox Guardian3;
+        private System.Windows.Forms.Label GameOverMessage;
+        private System.Windows.Forms.Label FinalScore;
+        private System.Windows.Forms.Button BackToMenu;
+        private System.Windows.Forms.Button newGame;
     }
 }
