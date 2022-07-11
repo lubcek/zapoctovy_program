@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace odkladiste
 {
-    public partial class Info : Form
+    public partial class Rules : Form
     {
-        public Info()
+        public Rules()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void menu_Click(object sender, EventArgs e)
         {
             this.Hide();
             Menu back = new Menu();

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace odkladiste
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         // založení proměnných potřebných pro hru
         bool goUp, goDown, goLeft, goRight, noUp, noDown, noLeft, noRight, isGameOver, collectedBell; //pro hráče
@@ -18,7 +18,7 @@ namespace odkladiste
 
         int score, newScore, lives, playerSpeed, ghostSpeed, faster, enemyCounter, counter, imageCounter;       
  
-        public Form1()
+        public Game()
         {
             InitializeComponent();
             resetGame();
@@ -50,6 +50,12 @@ namespace odkladiste
                 goRight = true;
                 goUp = goDown = goLeft = false;
                 noUp = noDown = noLeft = false;
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Hide();
+                Menu back = new Menu();
+                back.Show();
             }
         }
 
@@ -286,7 +292,7 @@ namespace odkladiste
         // spuštění nové hry
         {
             this.Hide();
-            Form1 f3 = new Form1();
+            Game f3 = new Game();
             f3.Show();
         }
 

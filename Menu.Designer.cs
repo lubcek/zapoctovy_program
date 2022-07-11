@@ -29,20 +29,23 @@ namespace odkladiste
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            this.game = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.info = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
+            this.rules = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // game
             // 
-            this.button1.Location = new System.Drawing.Point(320, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 100);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.game.Location = new System.Drawing.Point(320, 200);
+            this.game.Name = "game";
+            this.game.Size = new System.Drawing.Size(160, 100);
+            this.game.TabIndex = 0;
+            this.game.Text = "Start";
+            this.game.UseVisualStyleBackColor = true;
+            this.game.Click += new System.EventHandler(this.game_Click);
             // 
             // label1
             // 
@@ -54,25 +57,48 @@ namespace odkladiste
             this.label1.TabIndex = 1;
             this.label1.Text = "Hungry Horace";
             // 
-            // button2
+            // info
             // 
-            this.button2.Location = new System.Drawing.Point(340, 340);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 80);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Info";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.info.Location = new System.Drawing.Point(340, 340);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(120, 80);
+            this.info.TabIndex = 2;
+            this.info.Text = "Info";
+            this.info.UseVisualStyleBackColor = true;
+            this.info.Click += new System.EventHandler(this.info_Click);
+            // 
+            // exit
+            // 
+            this.exit.Location = new System.Drawing.Point(40, 340);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(120, 80);
+            this.exit.TabIndex = 3;
+            this.exit.Text = "Exit";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // rules
+            // 
+            this.rules.Location = new System.Drawing.Point(640, 340);
+            this.rules.Name = "rules";
+            this.rules.Size = new System.Drawing.Size(120, 80);
+            this.rules.TabIndex = 4;
+            this.rules.Text = "Rules";
+            this.rules.UseVisualStyleBackColor = true;
+            this.rules.Click += new System.EventHandler(this.rules_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.rules);
+            this.Controls.Add(this.exit);
+            this.Controls.Add(this.info);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.game);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "Hungry Horace";
             this.ResumeLayout(false);
@@ -82,8 +108,10 @@ namespace odkladiste
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button game;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button info;
+        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Button rules;
     }
 }
