@@ -76,11 +76,13 @@ namespace odkladiste
             {
                 Horace.BackgroundImage = global::odkladiste.Properties.Resources.horace1;
                 bell.BackgroundImage = global::odkladiste.Properties.Resources.bell1;
+                arrow.BackgroundImage = global::odkladiste.Properties.Resources.arrow1;
             }
             else
             {
                 Horace.BackgroundImage = global::odkladiste.Properties.Resources.horace2;
                 bell.BackgroundImage = global::odkladiste.Properties.Resources.bell2;
+                arrow.BackgroundImage = global::odkladiste.Properties.Resources.arrow2;
             }
 
             if (goUp == true) // pohyb směrem nahoru
@@ -109,6 +111,7 @@ namespace odkladiste
             if (Horace.Left > 700)
             // když Horace vyjede branou mimo hrení plochu, hra se resetuje
             {
+                GameTimer.Stop();
                 nextGame();
             }            
 
@@ -117,7 +120,7 @@ namespace odkladiste
             {
                 collectedBell = false;
                 counter = 0;
-                orangeGhost.BackColor = System.Drawing.Color.Red;                
+                Guardian.BackColor = System.Drawing.Color.Red;                
             }
             else counter++;
 
@@ -145,11 +148,11 @@ namespace odkladiste
                         {
                             collectedBell = true;
                             x.Visible = false;
-                            orangeGhost.BackColor = System.Drawing.Color.Blue;                            
+                            Guardian.BackColor = System.Drawing.Color.Blue;                            
                         }
                     }
 
-                    if ((string)x.Tag == "wall" || (string)x.Tag == "gate")
+                    if ((string)x.Tag == "wall" || (string)x.Tag == "gate" && x.Visible == true)
                     // Horace narazí do zdi a zarazí se o ni
                     {
                         if (goUp == true && Horace.Bounds.IntersectsWith(x.Bounds))
@@ -187,6 +190,7 @@ namespace odkladiste
                             // pokud je aktivní zvon, Horace strážce sní
                             {
                                 score += 50;
+                                newScore += 50;
                                 x.Visible = false;
                                 enemyCounter = 0;
                             }
@@ -226,8 +230,8 @@ namespace odkladiste
             Horace.Left = 10;
             Horace.Top = 200;
             goLeft = goRight = goUp = goDown = false;
-            orangeGhost.Left = 10;
-            orangeGhost.Top = 250;           
+            Guardian.Left = 10;
+            Guardian.Top = 250;           
 
             GameTimer.Start();
         }
@@ -237,7 +241,9 @@ namespace odkladiste
         // skóre i počet životů se přenáší, strážce se postupně zrychluje
         {
             newScore = 0;
-            
+            collectedBell = false;
+            counter = 0;
+
             // úprava rychlosti strážce - zrychlí se o 1 každá 3 kola
             faster++;
             ghostSpeed = ghostSpeed + faster/3;
@@ -246,8 +252,9 @@ namespace odkladiste
             Horace.Left = 10;
             Horace.Top = 200;
             goLeft = goRight = goUp = goDown = false;
-            orangeGhost.Left = 10;
-            orangeGhost.Top = 250;
+            Guardian.Left = 10;
+            Guardian.Top = 250;
+            Guardian.BackColor = System.Drawing.Color.Red;
 
             foreach (Control x in this.Controls)
             // zobrazí všechny sebrané předměty (mince, zvonek)
