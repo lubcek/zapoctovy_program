@@ -13,6 +13,7 @@ namespace odkladiste
         int playerSpeed, guardianSpeed, faster; // rychlost pohybu po mapě pro hráče a pro strážce
         int directionG; // proměnná na změnu směru strážce, je určována náhodně
         int enemyCounter, counter, imageCounter; // počítadla pro časové prodlevy ve hře
+        int coinImage; // proměnná pro animaci rotace mincí (animace je zapoznámkovaná kvůli náročnosti)
         
         public Random rnd = new Random(12345); // generátor náhodných čísel
 
@@ -73,8 +74,7 @@ namespace odkladiste
             // Zobrazování aktuální situace hry - skóre a počet životů
             textScore.Text = "Score: " + score;
             textLives.Text = "Lives: " + lives;
-            textRounds.Text = "Round: " + round;
-            label1.Text = "" + guardianSpeed;
+            textRounds.Text = "Round: " + round;           
             imageCounter++;
 
             if (lives == 0)
@@ -182,7 +182,30 @@ namespace odkladiste
                             score += 1;
                             newScore += 1;
                             x.Visible = false;
-                        }                        
+                        }
+
+                        //animace mincí
+                        // bohužel příliš zpomaluje herní smyčku, ale myslím, že se celkem povedla
+                        /*
+                        coinImage = (imageCounter / 5) % 4;
+                        switch (coinImage)
+                        {
+                            case 0:
+                                x.BackgroundImage = global::odkladiste.Properties.Resources.coin1;
+                                break;
+                            case 1:
+                                x.BackgroundImage = global::odkladiste.Properties.Resources.coin3;
+                                break;                            
+                            case 2:
+                                x.BackgroundImage = global::odkladiste.Properties.Resources.coin2;
+                                break;
+                            case 3:
+                                x.BackgroundImage = global::odkladiste.Properties.Resources.coin4;
+                                break;                            
+                            default:
+                                break;
+                        }
+                        */
                     }
 
                     if ((string)x.Tag == "activeWall")
@@ -332,8 +355,6 @@ namespace odkladiste
 
             //nastavení výchozí pozice pro strážce
             Guardian.Left = 445;
-            Guardian.Top = 250;
-            Guardian.Left = 10;
             Guardian.Top = 250;
             goLeftG = goRightG = goUpG = goDownG = false;
 

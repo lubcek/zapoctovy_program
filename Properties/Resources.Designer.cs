@@ -113,6 +113,16 @@ namespace odkladiste.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coin11 {
+            get {
+                object obj = ResourceManager.GetObject("coin11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coin2 {
             get {
                 object obj = ResourceManager.GetObject("coin2", resourceCulture);
@@ -123,9 +133,39 @@ namespace odkladiste.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coin21 {
+            get {
+                object obj = ResourceManager.GetObject("coin21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coin3 {
             get {
                 object obj = ResourceManager.GetObject("coin3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coin31 {
+            get {
+                object obj = ResourceManager.GetObject("coin31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coin4 {
+            get {
+                object obj = ResourceManager.GetObject("coin4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
