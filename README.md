@@ -1,9 +1,11 @@
 # zapoctovy_program
 
 Zápočtový program - Hungry Horace
+
 Programování 2 NPRG031
 
 Lubor Čech, I. ročník, ls 2021/2022
+
 MFF UK
 
 Dokumentace - doprovodný dokument
