@@ -21,6 +21,24 @@ Dokumentace - doprovodný dokument
    velké mnnožtví bodů.
    Hráč může směr pohybu Horace ovládat pomocí šipek.
 
+   Konkrétní popis hry:
+      Horace se pohybuje po mapě rychlostí 2 a sbírá mince. Když narazí na minci,
+      sebere ji, ta zmizí, a skóre se zvýší o 1. Celkem je na mapě 61 mincí.
+      Současně se po mapě pohybuje strážce, který se snaží Horace chytit. Zpočátku
+	má strážce rychlost 1, ale každá 3 kola se zvýší o 1 a to až na hranici 10,
+	kdy již rychlost zlstává konstantní. Pokud strážce narazí na Horace, vezme mu
+	jeden život (celkem jich má Horace na začátku hry 5) a strážce i Horace se
+	přemístí na výchozí pozice, kde pokračují v pohybu.
+	Na mapě se nachází zvonek. Když jej Horace sebere, zvonek zmizí a po dobu zhruba
+	35 sekund je možné porazit strážce. V tom případě získá Horace 50 bodů.
+	Východ z mapy je zpočátku blokován bránou. Ta zmizí, když se na dané mapě získá
+	alespoň 50 bodů.
+	Po otevření brány může Horace projít do dalšího kola. Tehdy se celá mapa resetuje
+	a on i strážce opět začínají na výchozí pozici. Skóre i zbývající počet životů se
+	zachovají.
+	Když Horace ztratí všech 5 životů, hra je násilně ukončena a zobrazí se nabídka
+	dalšího postupu (nová hra, návrat do menu) a celkové dosažené skóre.
+
 3. ALGORITMUS
    Algoritmus je takový, že hra neustále každých 10 milisekund vyhodnocuje svůj stav
    a stav všech prvků formuláře. Během každé smyčky se kontrolují podmínky, které by
@@ -95,8 +113,8 @@ Dokumentace - doprovodný dokument
 8. PRŮBĚH PRACÍ
    Původní představa podoby programu byla taková, že všechny prvky budou v jednom
    formuláři a pouze se bude měnit jejich viditelnost. Toto se však vzhledem k množství
-   prvků brzy ukázalo jako velice nepraktické řešení. Proto jsem program předělal a
-   rozdělil jednotlivé části mezi více formulářů. Ovšem zde jsem zjistil, že formuláře
+   prvků brzy ukázalo jako velice nepraktické řešení. Proto jsem program předělal
+   a rozdělil jednotlivé části mezi více formulářů. Ovšem zde jsem zjistil, že formuláře
    zbytečně nadpoužívám a mé představy o podobě programu by byly moc sloužité. Proto jsem
    založil projekt potřetí a ten již zpracoval do podoby, kterou má program nyní.
    V průběhu psaní kódu jsem relaxoval kreslením obrázků pro program a přitom mě napadlo,
