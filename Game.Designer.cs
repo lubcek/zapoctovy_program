@@ -39,6 +39,7 @@ namespace odkladiste
             this.FinalScore = new System.Windows.Forms.Label();
             this.BackToMenu = new System.Windows.Forms.Button();
             this.newGame = new System.Windows.Forms.Button();
+            this.textRounds = new System.Windows.Forms.Label();
             this.pictureBox51 = new System.Windows.Forms.PictureBox();
             this.pictureBox50 = new System.Windows.Forms.PictureBox();
             this.pictureBox49 = new System.Windows.Forms.PictureBox();
@@ -95,6 +96,7 @@ namespace odkladiste
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
@@ -223,6 +225,7 @@ namespace odkladiste
             this.BackToMenu.Text = "Menu";
             this.BackToMenu.UseVisualStyleBackColor = false;
             this.BackToMenu.Visible = false;
+            this.BackToMenu.Click += new System.EventHandler(this.BackToMenu_Click);
             // 
             // newGame
             // 
@@ -235,6 +238,18 @@ namespace odkladiste
             this.newGame.Text = "New game";
             this.newGame.UseVisualStyleBackColor = false;
             this.newGame.Visible = false;
+            this.newGame.Click += new System.EventHandler(this.newGame_Click);
+            // 
+            // textRounds
+            // 
+            this.textRounds.AutoSize = true;
+            this.textRounds.BackColor = System.Drawing.SystemColors.Control;
+            this.textRounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textRounds.Location = new System.Drawing.Point(450, 10);
+            this.textRounds.Name = "textRounds";
+            this.textRounds.Size = new System.Drawing.Size(109, 29);
+            this.textRounds.TabIndex = 1037;
+            this.textRounds.Text = "Round: 0";
             // 
             // pictureBox51
             // 
@@ -750,10 +765,12 @@ namespace odkladiste
             // 
             // pictureBox19
             // 
-            this.pictureBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox19.BackgroundImage = global::odkladiste.Properties.Resources.coin1;
+            this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox19.Location = new System.Drawing.Point(450, 97);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox19.Size = new System.Drawing.Size(20, 20);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 21;
             this.pictureBox19.TabStop = false;
@@ -891,12 +908,25 @@ namespace odkladiste
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "coin";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(599, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 1038;
+            this.label1.Text = "label1";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textRounds);
             this.Controls.Add(this.newGame);
             this.Controls.Add(this.BackToMenu);
             this.Controls.Add(this.FinalScore);
@@ -962,8 +992,8 @@ namespace odkladiste
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Hungry Horace";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
@@ -1090,5 +1120,7 @@ namespace odkladiste
         private System.Windows.Forms.Label FinalScore;
         private System.Windows.Forms.Button BackToMenu;
         private System.Windows.Forms.Button newGame;
+        private System.Windows.Forms.Label textRounds;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -50,7 +50,7 @@ namespace odkladiste
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(162, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(522, 200);
+            this.label1.Size = new System.Drawing.Size(546, 180);
             this.label1.TabIndex = 2;
             this.label1.Text = resources.GetString("label1.Text");
             // 

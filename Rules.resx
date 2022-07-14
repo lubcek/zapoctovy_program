@@ -118,15 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Hungry horace is a game similar to PacMan. You are going through the
+    <value>      Hungry horace is a game similar to PacMan. You are going through the
 map, collecting points and escaping from the guardian. If guardian touch
-you, you go to the starting position and lose 1 live. In the time you have
-no lives, game ends.
-
-When you pick up the bell, you are temporarily able to beat the guardian
+you, you go to the starting position and lose 1 live. In the time you have no
+lives, game ends. You can change the direction of Horece's movement by
+pressing arrows. If you press Escape, you will go back to menu.
+      When you pick up the bell, you are temporarily able to beat the guardian
 and get many points.
-
-If you have enough points, the gate at the end of the map opens and you
+      If you have enough points, the gate at the end of the map opens and you
 can continue to the next round.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

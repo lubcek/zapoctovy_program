@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace odkladiste
@@ -13,19 +6,24 @@ namespace odkladiste
     public partial class Game : Form
     {
         // založení proměnných potřebných pro hru
-        bool goUp, goDown, goLeft, goRight, noUp, noDown, noLeft, noRight, collectedBell; //pro hráče
-        bool goUpG, goDownG, goLeftG, goRightG; //pro strážce 1
-        int score, newScore, lives, playerSpeed, guardianSpeed, directionG, faster;
-        int enemyCounter, counter, imageCounter;
-        public Random rnd = new Random(12345);
+        bool goUp, goDown, goLeft, goRight, noUp, noDown, noLeft, noRight; // ukazatele směru pohybu Horace, když je některá true, Horace se pohybuje daným směrem
+        bool goUpG, goDownG, goLeftG, goRightG; // tytéž ukazatele, ale pro pohyb strážce
+        bool collectedBell; // ukazatel toho, zdali je aktivní zvon        
+        int score, newScore, lives, round; // proměnné pro počítání postupu ve hře
+        int playerSpeed, guardianSpeed, faster; // rychlost pohybu po mapě pro hráče a pro strážce
+        int directionG; // proměnná na změnu směru strážce, je určována náhodně
+        int enemyCounter, counter, imageCounter; // počítadla pro časové prodlevy ve hře
+        
+        public Random rnd = new Random(12345); // generátor náhodných čísel
 
         public Game()
+        // inicializace mapy po spuštění formuláře
         {
             InitializeComponent();
             resetGame();
         }
 
-        private void keyisdown(object sender, KeyEventArgs e)
+        private void keyIsDown(object sender, KeyEventArgs e)
         // pohyb Horace pomocí šipek - pohybuje se tím směrem, kterou šipku stiskneme
         {
             if (e.KeyCode == Keys.Up && noUp == false)
@@ -65,7 +63,7 @@ namespace odkladiste
             }
         }
 
-        private void keyisup(object sender, KeyEventArgs e)
+        private void keyIsUp(object sender, KeyEventArgs e)
         // při puštění klávesy šipky se směr pohybu zachová a Horace pokračuje v pohybu
         {}
 
@@ -75,6 +73,8 @@ namespace odkladiste
             // Zobrazování aktuální situace hry - skóre a počet životů
             textScore.Text = "Score: " + score;
             textLives.Text = "Lives: " + lives;
+            textRounds.Text = "Round: " + round;
+            label1.Text = "" + guardianSpeed;
             imageCounter++;
 
             if (lives == 0)
@@ -84,8 +84,9 @@ namespace odkladiste
                 gameOver(message);
             }
 
-            if (imageCounter%40 < 20)
-            // animace pohybu některých prvků, v čase se střídají obrázky
+            // animace pohybu některých prvků, v čase se střídají obrázky v závislosti na hodnotě
+            // proměnné imageCounter
+            if (imageCounter%40 < 20)            
             {
                 Horace.BackgroundImage = global::odkladiste.Properties.Resources.horace1;
                 bell.BackgroundImage = global::odkladiste.Properties.Resources.bell1;
@@ -102,7 +103,7 @@ namespace odkladiste
                 else Guardian.BackgroundImage = global::odkladiste.Properties.Resources.guardian4;
             }
 
-            // HORACE - pohyb
+            // HORACE - pohyb  (změna souřadnic objektu)
             if (goUp == true) // pohyb směrem nahoru
             {
                 Horace.Top -= playerSpeed;                
@@ -121,7 +122,7 @@ namespace odkladiste
             }
             // konec bloku Horacova pohybu
 
-            // GUARDIAN - pohyb
+            // GUARDIAN - pohyb (změna souřadnic objektu)
             if (goUpG == true) // pohyb směrem nahoru
             {
                 Guardian.Top -= guardianSpeed;
@@ -151,10 +152,16 @@ namespace odkladiste
             {
                 GameTimer.Stop();
                 nextGame();
-            }            
+            }
+            if (Guardian.Left > 520 | Guardian.Left < 0 | Guardian.Top < 20 | Guardian.Top > 300)
+            // ošetření případu, kdy by strážce opustil herní plochu
+            {
+                Guardian.Left = 445;
+                Guardian.Top = 250;
+            }
 
             if (counter > 2000 && collectedBell == true)
-            // Horace sebral zvonek a nyní může odstranit strážce
+            // počítadlo pro aktivitu zvonku, když counter dosáhne 2000, zvonek se deaktivuje
             {
                 collectedBell = false;
                 counter = 0;
@@ -164,35 +171,35 @@ namespace odkladiste
             foreach (Control x in this.Controls)
             // procházení všech komponent formuláře
             {
-                if (x is PictureBox)
+                if (x is PictureBox) // všechny aktivní herní prvky jsou typu Picturebox, proto stačí pracovat jen s tímto typem objektů
                 {
 
                     if ((string)x.Tag == "coin" && x.Visible == true)
-                    // Horace sbírá jídlo - jídlo zmizí a zvýší se skóre
+                    // Horace sbírá mince - mince zmizí a zvýší se skóre
                     {
-                        if (Horace.Bounds.IntersectsWith(x.Bounds))
+                        if (Horace.Bounds.IntersectsWith(x.Bounds)) // pokud se Horace a mince překrývají 
                         {
                             score += 1;
                             newScore += 1;
                             x.Visible = false;
-                        }
+                        }                        
                     }
 
                     if ((string)x.Tag == "activeWall")
-                    // pohyblivé stěny
+                    // pohyblivé stěny se objevují a mizí v závislosti na hodnotě imageCounteru
                     {
-                        if (counter%900 == 0 || counter % 900 == 600)
+                        if (imageCounter%900 == 0 || imageCounter % 900 == 600)
                         {
                             if (x.Visible == true) x.Visible = false;                            
                         }
-                        if (counter % 900 == 300)
+                        if (imageCounter % 900 == 300)
                         {
                             if (x.Visible == false) x.Visible = true;
                         }
                     }
 
                     if ((string)x.Tag == "bell")
-                    // Horace vzal zvon a může sníst stráže
+                    // Horace vzal zvon a může sníst stráže, 
                     {
                         if (x.Visible == true && Horace.Bounds.IntersectsWith(x.Bounds))
                         {
@@ -208,25 +215,26 @@ namespace odkladiste
                         // když Horace narazí do zdi, zastaví se
                         if (goUp == true && Horace.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Horace.Top = Horace.Top + 2;
+                            Horace.Top = Horace.Top + playerSpeed; // ošetření, aby se Horace nezasekl ve zdi
+                            // Horace je navrácen na poslední pozici před kolizí se zdí.
                             noUp = true;
                             goUp = false;
                         }
                         if (goDown == true && Horace.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Horace.Top = Horace.Top - 2;
+                            Horace.Top = Horace.Top - playerSpeed;
                             noDown = true;
                             goDown = false;
                         }
                         if (goLeft == true && Horace.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Horace.Left = Horace.Left + 2;
+                            Horace.Left = Horace.Left + playerSpeed;
                             noLeft = true;
                             goLeft = false;
                         }
                         if (goRight == true && Horace.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Horace.Left = Horace.Left - 2;
+                            Horace.Left = Horace.Left - playerSpeed;
                             noRight = true;
                             goRight = false;
                         }
@@ -234,7 +242,7 @@ namespace odkladiste
                         // když strážce narazí do zdi, změní směr
                         if (goUpG == true && Guardian.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Guardian.Top = Guardian.Top + 2;                            
+                            Guardian.Top = Guardian.Top + guardianSpeed;                            
                             goUpG = false;
                             directionG = rnd.Next(0, 2);
                             if (directionG == 0) goLeftG = true;
@@ -242,7 +250,7 @@ namespace odkladiste
                         }
                         if (goDownG == true && Guardian.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Guardian.Top = Guardian.Top - 2;                            
+                            Guardian.Top = Guardian.Top - guardianSpeed;                            
                             goDownG = false;
                             directionG = rnd.Next(0, 2);
                             if (directionG == 0) goLeftG = true;
@@ -250,7 +258,7 @@ namespace odkladiste
                         }
                         if (goLeftG == true && Guardian.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Guardian.Left = Guardian.Left + 2;                           
+                            Guardian.Left = Guardian.Left + guardianSpeed;                           
                             goLeftG = false;
                             directionG = rnd.Next(0, 2);
                             if (directionG == 0) goUpG = true;
@@ -258,7 +266,7 @@ namespace odkladiste
                         }
                         if (goRightG == true && Guardian.Bounds.IntersectsWith(x.Bounds))
                         {
-                            Guardian.Left = Guardian.Left - 2;                           
+                            Guardian.Left = Guardian.Left - guardianSpeed;                           
                             goRightG = false;
                             directionG = rnd.Next(0, 2);
                             if (directionG == 0) goUpG = true;
@@ -313,16 +321,22 @@ namespace odkladiste
             score = 0;
             newScore = 0;
             lives = 5;
+            round = 1;
             guardianSpeed = 1;
             playerSpeed = 2;
+
             // nastavení výchozí pozice pro Horace
             Horace.Left = 10;
             Horace.Top = 200;
             goLeft = goRight = goUp = goDown = false;
+
             //nastavení výchozí pozice pro strážce
             Guardian.Left = 445;
             Guardian.Top = 250;
+            Guardian.Left = 10;
+            Guardian.Top = 250;
             goLeftG = goRightG = goUpG = goDownG = false;
+
             // počáteční směr strážce
             directionG = rnd.Next(0, 2);
             if (directionG == 0) goUpG = true;
@@ -338,21 +352,29 @@ namespace odkladiste
             newScore = 0;
             collectedBell = false;
             counter = 0;
+            enemyCounter = 10000;
+            imageCounter = 0;
+            round++; //zvýší se číslo herního kola
+
             // úprava rychlosti strážce - zrychlí se o 1 každá 3 kola
+            // strážce zrychluje až do 10
             faster++;
-            guardianSpeed = guardianSpeed + faster/3;            
+            if (faster%3 == 0 & guardianSpeed < 10) guardianSpeed++;
+            
             // vrátí Horace, zvonek a strážce na výchozí pozice
             Horace.Left = 10;
             Horace.Top = 200;
             goLeft = goRight = goUp = goDown = false;
             Guardian.Left = 445;
-            Guardian.Top = 250;                        
+            Guardian.Top = 250;
+            
             foreach (Control x in this.Controls)
             // zobrazí všechny sebrané předměty (mince, zvonek)
             {
-                if (x.Visible == false && x is PictureBox)
+                if (x.Visible == false && x is PictureBox) // prochází všechny prvky typu PictureBox
                 {
                     if ((string)x.Tag == "coin" || (string)x.Tag == "bell" || (string)x.Tag == "guardian" || (string)x.Tag == "gate")
+                    // když nalezne prvek s požadovaným tagem, zobrazí jej
                     {
                         x.Visible = true;
                     }
@@ -373,8 +395,8 @@ namespace odkladiste
             newGame.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        // spuštění nové hry
+        private void newGame_Click(object sender, EventArgs e)
+        // spuštění nové hry - úplné resetování herní mapy
         {
             this.Hide();
             Game f3 = new Game();
